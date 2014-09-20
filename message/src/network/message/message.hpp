@@ -10,6 +10,7 @@
 #include <string>
 #include <map>
 #include <functional>
+#include <network/config.hpp>
 #include <network/message/message_base.hpp>
 #include <boost/shared_container_iterator.hpp>
 
@@ -26,9 +27,7 @@ struct message : message_base {
   // Constructors
   message();
   message(message const& other);
-#if !defined(BOOST_NO_CXX11_DEFAULTED_FUNCTIONS)
-  message(message && other) = default;
-#endif  // !defined(BOOST_NO_CXX11_DEFAULTED_FUNCTIONS)
+  message(message && other) NETWORK_DEFAULTED_FUNCTION;
 
   // Assignment
   message& operator=(message const & other);

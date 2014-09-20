@@ -5,6 +5,7 @@
 # (See accompanying file LICENSE_1_0.txt or copy at
 # http://www.boost.org/LICENSE_1_0.txt)
 
+include_directories(${CPP-NETLIB_SOURCE_DIR}/config/src/)
 include_directories(${CPP-NETLIB_SOURCE_DIR}/uri/src ${CPP-NETLIB_SOURCE_DIR}/message/src)
 
 set(CPP-NETLIB_MESSAGE_SRCS

@@ -10,6 +10,7 @@
 #include <string>
 #include <unordered_map>
 #include <boost/utility/string_ref.hpp>
+#include <network/config.hpp>
 
 namespace network {
 namespace http {
@@ -17,9 +18,9 @@ namespace http {
 struct session {
   session() = default;
   session(const session&) = default;
-  session(session&&) = default;
+  session(session&&) NETWORK_DEFAULTED_FUNCTION;
   session& operator=(const session&) = default;
-  session& operator=(session&&) = default;
+  session& operator=(session&&) NETWORK_DEFAULTED_FUNCTION;
 
   void set(boost::string_ref key, boost::string_ref value, bool server_only = false);
   std::string get(boost::string_ref key, boost::string_ref default_value) const;
